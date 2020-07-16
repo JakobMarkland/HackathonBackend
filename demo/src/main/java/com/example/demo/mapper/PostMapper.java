@@ -1,20 +1,20 @@
 package com.example.demo.mapper;
 
 import com.github.marlonlom.utilities.timeago.TimeAgo;
-import com.programming.techie.springredditclone.dto.PostRequest;
-import com.programming.techie.springredditclone.dto.PostResponse;
-import com.programming.techie.springredditclone.model.*;
-import com.programming.techie.springredditclone.repository.CommentRepository;
-import com.programming.techie.springredditclone.repository.VoteRepository;
-import com.programming.techie.springredditclone.service.AuthService;
+import com.example.demo.dto.PostRequest;
+import com.example.demo.dto.PostResponse;
+import com.example.demo.model.*;
+import com.example.demo.repository.CommentRepository;
+import com.example.demo.repository.VoteRepository;
+import com.example.demo.service.AuthService;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Optional;
 
-import static com.programming.techie.springredditclone.model.VoteType.DOWNVOTE;
-import static com.programming.techie.springredditclone.model.VoteType.UPVOTE;
+import static com.example.demo.model.VoteType.DOWNVOTE;
+import static com.example.demo.model.VoteType.UPVOTE;
 
 @Mapper(componentModel = "spring")
 public abstract class PostMapper {

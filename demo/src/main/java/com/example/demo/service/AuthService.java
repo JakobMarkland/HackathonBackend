@@ -34,7 +34,7 @@ public class AuthService {
 	private final VerificationTokenRepository verificationTokenRepository = null;
 	private final MailService mailService = new MailService();
 	private final AuthenticationManager authenticationManager = null;
-	private final JwtProvider jwtProvider;
+	private final JwtProvider jwtProvider = new JwtProvider();
 	
 	@Transactional
     public void signup(RegisterRequest registerRequest) {
