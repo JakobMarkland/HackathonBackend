@@ -24,6 +24,7 @@ public class AuthService {
 	private final PasswordEncoder passwordEncoder;
 	private final UserRepository userRepository;
 	private final VerificationTokenRepository verificationTokenRepository;
+	private final MailService mailService;
 	
 	@Transactional
     public void signup(RegisterRequest registerRequest) {
@@ -37,6 +38,10 @@ public class AuthService {
         userRepository.save(user);
         
         String token = generateVerificationToken(user);
+        mailService.sendMail(new NotificationEmail("Please Activate your Accout",
+        		user.getEmail(), "Thank you for signing up to UPS Media, " + 
+        		"please click on the below url to activate your account" + 
+        		"http://localhost:8080/api/auth/accountverification/" + token));
     }
 	
 	private String generateVerificationToken(User user) {
