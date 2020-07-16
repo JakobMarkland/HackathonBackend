@@ -24,4 +24,16 @@ public class VerificationToken {
     @OneToOne(fetch = LAZY)
     private User user;
     private Instant expiryDate;
+	public void setToken(String token2) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setUser(User user2) {
+		// TODO Auto-generated method stub
+		
+	}
+	public Object getUser() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
