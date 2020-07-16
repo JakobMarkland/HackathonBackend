@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.dto.RegisterRequest;
+import com.example.demo.model.NotificationEmail;
 import com.example.demo.model.User;
 import com.example.demo.model.VerificationToken;
 import com.example.demo.repository.UserRepository;
@@ -8,6 +9,7 @@ import com.example.demo.repository.VerificationTokenRepository;
 
 import lombok.AllArgsConstructor;
 
+import java.time.Instant;
 import java.util.UUID;
 
 import javax.transaction.Transactional;
@@ -20,7 +22,7 @@ import org.springframework.stereotype.Service;
 @Service
 @AllArgsConstructor
 public class AuthService {
-	
+
 	private final PasswordEncoder passwordEncoder;
 	private final UserRepository userRepository;
 	private final VerificationTokenRepository verificationTokenRepository;
@@ -52,8 +54,6 @@ public class AuthService {
 		
 		verificationTokenRepository.save(verificationToken);
 		return token;
-		
-		
-		
+
 	}
 }
